@@ -1,0 +1,344 @@
+/* ===================================================================
+   Preconstruct Design System — Core Stylesheet
+   Neo-Minimalism Shell + Compact Maximalism Data
+   Colors: Pantone Cloud Dancer (11-4201) & Mocha Mousse (17-1230)
+   =================================================================== */
+
+:root {
+  /* Pantone 2026 / 2025 Core Palette */
+  --color-paper: #F0EEE9;            /* Pantone Cloud Dancer 11-4201 */
+  --color-sheet: #FBFAF7;            /* Lighter tint of Cloud Dancer */
+  --color-sheet-elevated: #FFFFFF;
+  --color-ink: #1F1D1A;              /* Warm near-black */
+  --color-graphite: #6B665E;         /* Warm grey */
+  --color-graphite-faint: #9E988F;
+  --color-rule: #DDD8CF;             /* Warm hairline border */
+  --color-rule-subtle: #E8E4DC;
+  
+  /* Brand Accent: Mocha Mousse */
+  --color-mocha: #A47864;            /* Pantone Mocha Mousse 17-1230 */
+  --color-mocha-deep: #7A5545;       /* High-contrast mocha */
+  --color-mocha-tint: rgba(164, 120, 100, 0.12);
+  --color-mocha-glow: rgba(164, 120, 100, 0.24);
+
+  /* Provenance States (Honest Certainty) */
+  --color-measured: #3E6B57;         /* Deterministic CAD geometry */
+  --color-measured-tint: rgba(62, 107, 87, 0.12);
+  --color-read: #3C5A7A;             /* Vector text / OCR reading */
+  --color-read-tint: rgba(60, 90, 122, 0.12);
+  --color-look: #B5832A;             /* Needs a look / Inferred */
+  --color-look-tint: rgba(181, 131, 42, 0.14);
+  --color-void: #A6402F;             /* Out of spec / Missing */
+  --color-void-tint: rgba(166, 64, 47, 0.12);
+
+  /* Trade & Drawing Overlay Colors (Accurate to Tender Drawings) */
+  --trade-supply: #D93872;
+  --trade-return: #2EA043;
+  --trade-exhaust: #E66E19;
+  --trade-fresh-air: #0EA5E9;
+  --trade-chilled-water: #567A32;
+  --trade-equipment: #8B5CF6;
+  --trade-damper: #DC2626;
+
+  /* Typography */
+  --font-sans: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  /* Density Defaults (Comfortable) */
+  --row-h: 36px;
+  --cell-py: 8px;
+  --cell-px: 12px;
+  --font-table-size: 13px;
+  --card-padding: 16px;
+
+  /* Radii */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --ease-standard: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --duration-fast: 140ms;
+  --duration-normal: 220ms;
+  --duration-scan: 1800ms;
+
+  /* Shadows */
+  --shadow-subtle: 0 1px 3px rgba(31, 29, 26, 0.05), 0 1px 2px rgba(31, 29, 26, 0.03);
+  --shadow-float: 0 10px 25px -5px rgba(31, 29, 26, 0.08), 0 8px 10px -6px rgba(31, 29, 26, 0.04);
+}
+
+/* Dark Theme Overrides (Warm Charcoal Base, non blue-black) */
+[data-theme='dark'] {
+  --color-paper: #191816;
+  --color-sheet: #22201D;
+  --color-sheet-elevated: #2A2723;
+  --color-ink: #F2EFE9;
+  --color-graphite: #A8A296;
+  --color-graphite-faint: #756E63;
+  --color-rule: #36322C;
+  --color-rule-subtle: #2B2823;
+
+  --color-mocha: #C49782;
+  --color-mocha-deep: #D4A893;
+  --color-mocha-tint: rgba(196, 151, 130, 0.16);
+  --color-mocha-glow: rgba(196, 151, 130, 0.3);
+
+  --color-measured: #528E75;
+  --color-measured-tint: rgba(82, 142, 117, 0.18);
+  --color-read: #5B81A8;
+  --color-read-tint: rgba(91, 129, 168, 0.18);
+  --color-look: #D4A244;
+  --color-look-tint: rgba(212, 162, 68, 0.20);
+  --color-void: #C95B49;
+  --color-void-tint: rgba(201, 91, 73, 0.20);
+
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-float: 0 12px 28px rgba(0, 0, 0, 0.5);
+}
+
+/* Compact Density Mode */
+[data-density='compact'] {
+  --row-h: 28px;
+  --cell-py: 4px;
+  --cell-px: 8px;
+  --font-table-size: 11.5px;
+  --card-padding: 10px;
+}
+
+/* Global Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  color: inherit;
+  outline: none;
+}
+
+/* Tabular Numerals for Data, Tags & Quantities */
+.font-mono,
+.mono-val,
+.cell-num,
+.badge-code,
+.hero-num {
+  font-family: var(--font-mono);
+  font-feature-settings: 'tnum' 1, 'zero' 1;
+}
+
+/* Keycap component */
+.keycap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  background: var(--color-sheet-elevated);
+  border: 1px solid var(--color-rule);
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  color: var(--color-graphite);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Provenance Badge Chips */
+.provenance-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.provenance-pill.measured {
+  background: var(--color-measured-tint);
+  color: var(--color-measured);
+  border: 1px solid rgba(62, 107, 87, 0.25);
+}
+
+.provenance-pill.read {
+  background: var(--color-read-tint);
+  color: var(--color-read);
+  border: 1px solid rgba(60, 90, 122, 0.25);
+}
+
+.provenance-pill.look {
+  background: var(--color-look-tint);
+  color: var(--color-look);
+  border: 1px solid rgba(181, 131, 42, 0.3);
+}
+
+.provenance-pill.void {
+  background: var(--color-void-tint);
+  color: var(--color-void);
+  border: 1px solid rgba(166, 64, 47, 0.3);
+}
+
+.dot-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Button Variants */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--color-mocha);
+  color: #FFFFFF;
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 12.5px;
+  transition: background var(--duration-fast) var(--ease-standard), transform var(--duration-fast);
+}
+
+.btn-primary:hover {
+  background: var(--color-mocha-deep);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--color-sheet-elevated);
+  color: var(--color-ink);
+  border: 1px solid var(--color-rule);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 12px;
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-mocha);
+  background: var(--color-sheet);
+}
+
+.btn-tertiary {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--color-graphite);
+  padding: 5px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  transition: color var(--duration-fast);
+}
+
+.btn-tertiary:hover {
+  color: var(--color-ink);
+  background: var(--color-rule-subtle);
+}
+
+/* Laser Scan Animation for live reading pass */
+@keyframes laserSweep {
+  0% {
+    top: 0%;
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0.2;
+  }
+}
+
+.laser-scanner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-mocha), #E08560, var(--color-mocha), transparent);
+  box-shadow: 0 0 12px var(--color-mocha-glow), 0 0 4px var(--color-mocha);
+  z-index: 40;
+  pointer-events: none;
+  animation: laserSweep var(--duration-scan) var(--ease-standard) infinite alternate;
+}
+
+/* Breathing animation for drag and drop target */
+@keyframes breathTarget {
+  0%, 100% {
+    border-color: var(--color-rule);
+    background-color: var(--color-sheet);
+  }
+  50% {
+    border-color: var(--color-mocha);
+    background-color: var(--color-mocha-tint);
+  }
+}
+
+.drop-target-active {
+  animation: breathTarget 1.6s ease-in-out infinite;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-rule);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-graphite-faint);
+}

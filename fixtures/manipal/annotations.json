@@ -1,0 +1,311 @@
+{
+  "project": {
+    "name": "Manipal Sports Complex",
+    "sheet_number": "KCEPL/HVAC/007",
+    "revision": "R1",
+    "sheet_title": "PROPOSED HVAC LAYOUT_FIRST FLOOR",
+    "client": "Manipal Academy of Higher Education",
+    "consultant": "Kapse Consulting Engineers Pvt Ltd",
+    "consultant_address": "Unit No. 216-B, 2nd Floor, South Tower, Lodha Supremus II, Road No. 22, Wagle Estate, Thane",
+    "scale": {
+      "nominal": "1:100",
+      "calibrated_ratio": 1.0,
+      "reference_benchmark": "TABLE TENNIS 9000mm x 6000mm (dim text verified)",
+      "provenance": "MEASURED"
+    }
+  },
+  "rooms": [
+    {
+      "id": "RM-01",
+      "name": "PICKLEBALL COURT 01",
+      "dimensions_mm": [19500, 10350],
+      "area_sqm": 201.83,
+      "bbox": [180, 220, 290, 160],
+      "tag_coord": [260, 300],
+      "hvac_served_by": "FF-FA-AHU-05",
+      "provenance": "READ"
+    },
+    {
+      "id": "RM-02",
+      "name": "PICKLEBALL COURT 02",
+      "dimensions_mm": [19500, 10350],
+      "area_sqm": 201.83,
+      "bbox": [480, 220, 290, 160],
+      "tag_coord": [560, 300],
+      "hvac_served_by": "FF-FA-AHU-05",
+      "provenance": "READ"
+    },
+    {
+      "id": "RM-03",
+      "name": "TABLE TENNIS HALL",
+      "dimensions_mm": [9000, 6000],
+      "area_sqm": 54.00,
+      "bbox": [780, 220, 140, 120],
+      "tag_coord": [830, 270],
+      "hvac_served_by": "FF-FA-AHU-02",
+      "provenance": "READ"
+    },
+    {
+      "id": "RM-04",
+      "name": "BILLIARD ROOM",
+      "dimensions_mm": [4750, 6500],
+      "area_sqm": 30.88,
+      "bbox": [930, 220, 100, 130],
+      "tag_coord": [970, 275],
+      "hvac_served_by": "FF-FA-AHU-02",
+      "provenance": "READ"
+    },
+    {
+      "id": "RM-05",
+      "name": "AHU ROOM - 04",
+      "dimensions_mm": [4950, 7450],
+      "area_sqm": 36.88,
+      "bbox": [60, 420, 90, 140],
+      "tag_coord": [95, 480],
+      "hvac_served_by": "FF-FA-AHU-04",
+      "provenance": "MEASURED"
+    },
+    {
+      "id": "RM-06",
+      "name": "AHU ROOM - 05",
+      "dimensions_mm": [5100, 3200],
+      "area_sqm": 16.32,
+      "bbox": [160, 420, 100, 80],
+      "tag_coord": [200, 455],
+      "hvac_served_by": "FF-FA-AHU-05",
+      "provenance": "READ"
+    },
+    {
+      "id": "RM-07",
+      "name": "BOYS TOILET & CHANGING",
+      "dimensions_mm": [4800, 5200],
+      "area_sqm": 24.96,
+      "bbox": [780, 360, 110, 110],
+      "tag_coord": [830, 410],
+      "hvac_served_by": "EAF-01",
+      "provenance": "READ"
+    },
+    {
+      "id": "RM-08",
+      "name": "STORE ROOM",
+      "dimensions_mm": [5100, 2950],
+      "area_sqm": 15.05,
+      "bbox": [900, 360, 110, 80],
+      "tag_coord": [945, 395],
+      "hvac_served_by": "Natural/Transfer",
+      "provenance": "READ"
+    }
+  ],
+  "equipment": [
+    {
+      "tag": "FF-FA-AHU-05",
+      "type": "Floor Mounted Air Handling Unit",
+      "capacity_tr": 26.5,
+      "airflow_cfm": 9500,
+      "location": "AHU ROOM - 05",
+      "bbox": [175, 435, 70, 45],
+      "provenance": "LOOK",
+      "provenance_note": "Capacity inferred from room cooling load calculation (Pickleball arena 403 m²); tag read from SHX crop"
+    },
+    {
+      "tag": "FF-FA-AHU-04",
+      "type": "Floor Mounted Air Handling Unit",
+      "capacity_tr": 18.0,
+      "airflow_cfm": 6500,
+      "location": "AHU ROOM - 04",
+      "bbox": [70, 440, 65, 45],
+      "provenance": "LOOK",
+      "provenance_note": "Room label verified in vector text; equipment schedule unreadable without OCR enhancement"
+    },
+    {
+      "tag": "FF-FA-AHU-02",
+      "type": "Floor Mounted Air Handling Unit",
+      "capacity_tr": 12.5,
+      "airflow_cfm": 4500,
+      "location": "AHU ROOM - 02",
+      "bbox": [730, 440, 65, 45],
+      "provenance": "LOOK",
+      "provenance_note": "Serves Table Tennis & Billiard Hall"
+    },
+    {
+      "tag": "EAF-01",
+      "type": "Inline Centrifugal Exhaust Fan",
+      "capacity_tr": 0.0,
+      "airflow_cfm": 1200,
+      "location": "BOYS TOILET",
+      "bbox": [865, 420, 28, 28],
+      "provenance": "READ"
+    }
+  ],
+  "duct_runs": [
+    {
+      "id": "DR-01",
+      "system": "Supply Air",
+      "color": "#D93872",
+      "section_mm": [1600, 450],
+      "length_m": 14.8,
+      "perimeter_mm": 4100,
+      "is655_gauge": 18,
+      "sheet_metal_thickness_mm": 1.25,
+      "surface_area_sqm": 60.68,
+      "insulation_area_sqm": 63.85,
+      "weight_kg": 657.8,
+      "path": [[245, 440], [245, 330], [370, 330]],
+      "provenance": "MEASURED",
+      "formula_ref": "IS 655:2006 Table 1 (1600mm max dim -> 18G / 1.25mm)"
+    },
+    {
+      "id": "DR-02",
+      "system": "Supply Air",
+      "color": "#D93872",
+      "section_mm": [1200, 400],
+      "length_m": 18.5,
+      "perimeter_mm": 3200,
+      "is655_gauge": 20,
+      "sheet_metal_thickness_mm": 1.00,
+      "surface_area_sqm": 59.20,
+      "insulation_area_sqm": 62.38,
+      "weight_kg": 510.6,
+      "path": [[370, 330], [540, 330], [680, 330]],
+      "provenance": "MEASURED",
+      "formula_ref": "IS 655:2006 Table 1 (1200mm max dim -> 20G / 1.00mm)"
+    },
+    {
+      "id": "DR-03",
+      "system": "Supply Air",
+      "color": "#D93872",
+      "section_mm": [800, 350],
+      "length_m": 12.2,
+      "perimeter_mm": 2300,
+      "is655_gauge": 22,
+      "sheet_metal_thickness_mm": 0.80,
+      "surface_area_sqm": 28.06,
+      "insulation_area_sqm": 30.15,
+      "weight_kg": 193.9,
+      "path": [[680, 330], [790, 330], [860, 330]],
+      "provenance": "MEASURED",
+      "formula_ref": "IS 655:2006 Table 1 (800mm max dim -> 22G / 0.80mm)"
+    },
+    {
+      "id": "DR-04",
+      "system": "Return Air",
+      "color": "#2EA043",
+      "section_mm": [1400, 400],
+      "length_m": 16.4,
+      "perimeter_mm": 3600,
+      "is655_gauge": 20,
+      "sheet_metal_thickness_mm": 1.00,
+      "surface_area_sqm": 59.04,
+      "insulation_area_sqm": 62.21,
+      "weight_kg": 509.2,
+      "path": [[245, 460], [245, 270], [420, 270]],
+      "provenance": "MEASURED",
+      "formula_ref": "IS 655:2006 Table 1 (1400mm max dim -> 20G / 1.00mm)"
+    },
+    {
+      "id": "DR-05",
+      "system": "Toilet Exhaust Air",
+      "color": "#E66E19",
+      "section_mm": [450, 250],
+      "length_m": 9.5,
+      "perimeter_mm": 1400,
+      "is655_gauge": 24,
+      "sheet_metal_thickness_mm": 0.63,
+      "surface_area_sqm": 13.30,
+      "insulation_area_sqm": 0.0,
+      "weight_kg": 72.4,
+      "path": [[865, 420], [865, 360], [820, 360]],
+      "provenance": "MEASURED",
+      "formula_ref": "IS 655:2006 Table 1 (450mm max dim -> 24G / 0.63mm, uninsulated)"
+    }
+  ],
+  "air_terminals": [
+    {
+      "id": "AT-01",
+      "tag": "SAD-01",
+      "type": "Supply Air Diffuser / Grille (Side Throw)",
+      "dimensions_mm": [600, 300],
+      "airflow_cfm": 550,
+      "count": 28,
+      "color": "#D93872",
+      "provenance": "MEASURED",
+      "provenance_note": "Geometric template matched across Pickleball & Table Tennis hall branches"
+    },
+    {
+      "id": "AT-02",
+      "tag": "RAD-01",
+      "type": "Return Air Grille (Ceiling Egg Crate)",
+      "dimensions_mm": [600, 600],
+      "airflow_cfm": 800,
+      "count": 14,
+      "color": "#2EA043",
+      "provenance": "MEASURED",
+      "provenance_note": "Geometric template matched along return plenum runs"
+    },
+    {
+      "id": "AT-03",
+      "tag": "EAG-01",
+      "type": "Exhaust Air Grille (Toilet Exhaust)",
+      "dimensions_mm": [300, 300],
+      "airflow_cfm": 150,
+      "count": 8,
+      "color": "#E66E19",
+      "provenance": "MEASURED",
+      "provenance_note": "Located inside BOYS TOILET cubicles WC & SH"
+    }
+  ],
+  "fire_dampers": [
+    {
+      "id": "FD-01",
+      "tag": "FD1",
+      "type": "Motorized Fire & Smoke Damper with 24V Actuator",
+      "size_mm": [1600, 450],
+      "wall_rating": "2 HR",
+      "coord": [245, 415],
+      "provenance": "READ",
+      "provenance_note": "Wall penetration at AHU Room-05 fire wall, tag FD1 read from drawing"
+    },
+    {
+      "id": "FD-02",
+      "tag": "FD2",
+      "type": "Fusible Link Fire Damper (72°C)",
+      "size_mm": [1200, 400],
+      "wall_rating": "2 HR",
+      "coord": [540, 330],
+      "provenance": "READ",
+      "provenance_note": "Partition wall penetration between Pickleball 01 and 02"
+    },
+    {
+      "id": "FD-03",
+      "tag": "FD3",
+      "type": "Fusible Link Fire Damper (72°C)",
+      "size_mm": [800, 350],
+      "wall_rating": "2 HR",
+      "coord": [780, 330],
+      "provenance": "READ",
+      "provenance_note": "Partition wall penetration into Table Tennis hall"
+    },
+    {
+      "id": "FD-04",
+      "tag": "FD4",
+      "type": "Motorized Fire Damper (Toilet Shaft)",
+      "size_mm": [450, 250],
+      "wall_rating": "2 HR",
+      "coord": [865, 385],
+      "provenance": "READ",
+      "provenance_note": "Toilet exhaust vertical riser penetration, tag FD4 read from drawing"
+    }
+  ],
+  "boq_summary": {
+    "total_sheet_metal_sqm": 220.28,
+    "total_insulation_sqm": 218.59,
+    "total_duct_weight_kg": 1943.9,
+    "total_grilles_count": 50,
+    "total_fire_dampers_count": 4,
+    "provenance_breakdown": {
+      "measured_percent": 74.2,
+      "read_percent": 21.6,
+      "needs_look_percent": 4.2
+    }
+  }
+}
